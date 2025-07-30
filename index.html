@@ -20,26 +20,59 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.28.2/babel.min.js"></script>
 
     <script type="text/babel">
-        function Titulo() {
+        function Titulo({ children }) {
             return (
-                <h1 className="form__titulo">Login</h1>
+                <h1 className="form__titulo">{children}</h1>
             )
         }
 
-        function Subtitulo() {
+        function Subtitulo({ children }) {
             return (
-                <h2 className="form__texto">Boas vindas! Faça seu login.</h2>
+                <h2 className="form__texto">{children}</h2>
+            )
+        }
+
+        function CampoDeDigitacao({ Label, tipo, placeholder, value, setValor }) {
+            return (
+                <div className="form__campo-digitacao">
+                    <label for="email">{Label}</label>
+                    <input type={tipo}
+                        placeholder={placeholder}
+                        required
+                        id="email"
+                        value={value}
+                        onChange={(evento) => setValor(evento.target.value)} />
+                </div>
+            )
+        }
+
+        function Botao({ children }) {
+            return (
+                <button type="submit" className="form__botao">{children}</button>
             )
         }
 
         function PaginaDeLogin() {
+            const [email, setEmail] = React.useState("")
+            const [senha, setSenha] = React.useState("")
             return (
                 <div className="container-login">
-                    <img src="./img/imagem-login.png" alt="imagem da tela de login"/>
+                    <img src="./img/imagem-login.png" alt="imagem da tela de login" />
                     <section>
                         <form>
-                            <Titulo />
-                            <Subtitulo />
+                            <Titulo>Login</Titulo>
+                            <Subtitulo>Boas vindas! Faça seu login.</Subtitulo>
+                            <CampoDeDigitacao Label="E-mail ou usuário"
+                                tipo="email"
+                                placeholder="Digite seu e-mail ou usuário"
+                                value={email}
+                                setValor={setEmail} />
+                            <CampoDeDigitacao Label="E-mail ou usuário"
+                                tipo="password"
+                                placeholder="Digite a sua senha"
+                                value={senha}
+                                setValor={setSenha} />
+                            <Botao>Login</Botao>
                         </form>
                     </section>
                 </div>
