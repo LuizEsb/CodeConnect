@@ -93,17 +93,18 @@
             const [email, setEmail] = React.useState("")
             const [senha, setSenha] = React.useState("")
 
-            const handleSubtmit = (event) => {
+            const handleSubmit = (event) => {
                 event.preventDefault()
                 console.log("email " + email)
                 console.log("senha " + senha)
+                window.location.href="./upload.html"
             }
 
             return (
                 <div className="container-login">
                     <img src="./img/imagem-login.png" alt="imagem da tela de login" />
                     <section>
-                        <form onSubmit={handleSubtmit}>
+                        <form onSubmit={handleSubmit}>
                             <Titulo>Login</Titulo>
                             <Subtitulo>Boas-vindas! Faça seu login.</Subtitulo>
                             <CampoDeDigitacao Label="E-mail ou usuário"
