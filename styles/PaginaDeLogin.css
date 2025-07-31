@@ -180,6 +180,7 @@
 .container-links__link {
     color: var(--verde-destaque);
     font-size: 18px;
+    text-decoration: none;
 }
 
 .container-links__link::after {

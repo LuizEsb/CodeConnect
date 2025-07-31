@@ -35,11 +35,11 @@
         function CampoDeDigitacao({ Label, tipo, placeholder, value, setValor }) {
             return (
                 <div className="form__campo-digitacao">
-                    <label for="email">{Label}</label>
+                    <label for={tipo}>{Label}</label>
                     <input type={tipo}
                         placeholder={placeholder}
                         required
-                        id="email"
+                        id={tipo}
                         value={value}
                         onChange={(evento) => setValor(evento.target.value)} />
                 </div>
@@ -52,28 +52,92 @@
             )
         }
 
+        function Checkbox() {
+            return (
+                <>
+                    <div className="form__campo-checkbox">
+                        <input type="Checkbox" id="lembrar" />
+                        <label for="lembrar"></label>
+                    </div>
+                    <p className="form__opcoes-texto">Lembrar-me</p>
+                </>
+            )
+        }
+
+        function Texto({ classe, children }) {
+            return (
+                <p className={classe}>{children}</p>
+            )
+        }
+
+        function ItemRedesSociais({ link, nome }) {
+            return (
+                <li>
+                    <a href={link}>
+                        <img src={`./img/${nome}.svg`} alt={`ícone do ${nome}`} />
+                        {nome}
+                    </a>
+                </li>
+            )
+        }
+
+        function Link({ children }) {
+            return (
+                <a href="#" className="container-links__link">
+                    {children}
+                </a>
+            )
+        }
+
         function PaginaDeLogin() {
             const [email, setEmail] = React.useState("")
             const [senha, setSenha] = React.useState("")
+
+            const handleSubtmit = (event) => {
+                event.preventDefault()
+                console.log("email " + email)
+                console.log("senha " + senha)
+            }
+
             return (
                 <div className="container-login">
                     <img src="./img/imagem-login.png" alt="imagem da tela de login" />
                     <section>
-                        <form>
+                        <form onSubmit={handleSubtmit}>
                             <Titulo>Login</Titulo>
-                            <Subtitulo>Boas vindas! Faça seu login.</Subtitulo>
+                            <Subtitulo>Boas-vindas! Faça seu login.</Subtitulo>
                             <CampoDeDigitacao Label="E-mail ou usuário"
                                 tipo="email"
                                 placeholder="Digite seu e-mail ou usuário"
                                 value={email}
                                 setValor={setEmail} />
-                            <CampoDeDigitacao Label="E-mail ou usuário"
+                            <CampoDeDigitacao Label="Senha"
                                 tipo="password"
                                 placeholder="Digite a sua senha"
                                 value={senha}
                                 setValor={setSenha} />
+                            <fieldset className="form__opcoes">
+                                <Checkbox />
+                                <p>
+                                    <a href="#" aria-label="Recuperar senha esquecida">Esqueci a senha</a>
+                                </p>
+                            </fieldset>
                             <Botao>Login</Botao>
                         </form>
+                        <div className="container-links">
+                            <Texto classe="container-links__titulo"
+                            >ou entre com outras contas</Texto>
+                            <ul>
+                                <ItemRedesSociais link="https://www.github.com"
+                                    nome="Github"
+                                />
+                                <ItemRedesSociais link="https://www.google.com"
+                                    nome="Google"
+                                />
+                            </ul>
+                            <Texto className="container-links__texto">Ainda não tem conta?</Texto>
+                            <Link>Crie seu cadastro!</Link>
+                        </div>
                     </section>
                 </div>
             )
