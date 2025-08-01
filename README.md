@@ -4,6 +4,8 @@ Durante meus estudos sobre React(componentes e JSX), desenvolvi este projeto de 
 
 ![imagem tela de login codeConnect](https://i.imgur.com/9pkuf9E.png)
 
+## Confira a versão completa [aqui](https://code-connect-nine-rose.vercel.app/)
+
 ## 🔨 Funcionalidades do projeto
 
  Página de login da CodeConnect, contendo uma imagem, um formulário de e-mail e senha com títulos e textos, um botão para entrar na aplicação, links para lembrar senha ou cadastrar. 
@@ -26,7 +28,7 @@ As técnicas e tecnologias utilizadas pra isso são:
 - `Props`: Dados passados de um componente pai para um componente filho no React.
 - `useState`: Hook no React que permite adicionar estado a componentes funcionais.
 - `Manipulação de eventos`: Ação de responder a interações do usuário, como cliques e teclas pressionadas, em aplicações web.
--`Eventos assíncronos`: Funções que aguardam uma resposta dinâmica. Usados para conferir o tipo de arquivo que está sendo enviado, ler o conteúdo do arquivo, verificar se a tag da postagem existe e "publicar" o arquivo. 
+- `Eventos assíncronos`: Funções que aguardam uma resposta dinâmica. Usados para conferir o tipo de arquivo que está sendo enviado, ler o conteúdo do arquivo, verificar se a tag da postagem existe e "publicar" o arquivo. 
 
 ## 🎨 Figma
 
