@@ -4,7 +4,9 @@ Durante meus estudos sobre React(componentes e JSX), desenvolvi este projeto de 
 
 ![imagem tela de login codeConnect](https://i.imgur.com/9pkuf9E.png)
 
-## Confira a versão completa [aqui](https://code-connect-nine-rose.vercel.app/)
+## Teste o projeto [aqui](https://code-connect-nine-rose.vercel.app/)
+
+## Confira a página de feed [aqui](https://github.com/LuizEsb/CodeConnect-feed)
 
 ## 🔨 Funcionalidades do projeto
 
